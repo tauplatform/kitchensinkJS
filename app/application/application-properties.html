@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>KitchensinkJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" href="/public/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <script type="text/javascript" src="/public/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/public/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
+    <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row page-title">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <a href="application.html" class="btn btn-default btn-sm">Back</a>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h4 class="text-center">Application properties</h4></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    </div>
+
+    <div class="list-group">
+
+        <div class="list-group-item">
+            <strong>appBundleFolder</strong>
+
+            <p class="item-value" id="appBundleFolder">
+                <script>$("#appBundleFolder").text(JSON.stringify(Rho.Application.appBundleFolder))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>appName</strong>
+
+            <p class="item-value" id="appName">
+                <script>$("#appName").text(JSON.stringify(Rho.Application.appName))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>appsBundleFolder</strong>
+
+            <p class="item-value" id="appsBundleFolder">
+                <script>$("#appsBundleFolder").text(JSON.stringify(Rho.Application.appsBundleFolder))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>badLinkURI</strong>
+
+            <p class="item-value" id="badLinkURI">
+                <script>$("#badLinkURI").text(JSON.stringify(Rho.Application.badLinkURI))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>bundleFolder</strong>
+
+            <p class="item-value" id="bundleFolder">
+                <script>$("#bundleFolder").text(JSON.stringify(Rho.Application.bundleFolder))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>configPath</strong>
+
+            <p class="item-value" id="configPath">
+                <script>$("#configPath").text(JSON.stringify(Rho.Application.configPath))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>databaseBlobFolder</strong>
+
+            <p class="item-value" id="databaseBlobFolder">
+                <script>$("#databaseBlobFolder").text(JSON.stringify(Rho.Application.databaseBlobFolder))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>defaultNativeMenu</strong>
+
+            <p class="item-value" id="defaultNativeMenu">
+                <script>$("#defaultNativeMenu").text(JSON.stringify(Rho.Application.defaultNativeMenu))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>locale</strong>
+
+            <p class="item-value" id="locale">
+                <script>$("#locale").text(JSON.stringify(Rho.Application.locale))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>modelsManifestPath</strong>
+
+            <p class="item-value" id="modelsManifestPath">
+                <script>$("#modelsManifestPath").text(JSON.stringify(Rho.Application.modelsManifestPath))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>nativeMenu</strong>
+
+            <p class="item-value" id="nativeMenu">
+                <script>$("#nativeMenu").text(JSON.stringify(Rho.Application.nativeMenu))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>publicFolder</strong>
+
+            <p class="item-value" id="publicFolder">
+                <script>$("#publicFolder").text(JSON.stringify(Rho.Application.publicFolder))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>settingsPageURI</strong>
+
+            <p class="item-value" id="settingsPageURI">
+                <script>$("#settingsPageURI").text(JSON.stringify(Rho.Application.settingsPageURI))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>splash</strong>
+
+            <p class="item-value" id="splash">
+                <script>$("#splash").text(JSON.stringify(Rho.Application.splash))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>startURI</strong>
+
+            <p class="item-value" id="startURI">
+                <script>$("#startURI").text(JSON.stringify(Rho.Application.startURI))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>title</strong>
+
+            <p class="item-value" id="title">
+                <script>$("#title").text(JSON.stringify(Rho.Application.title))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>userFolder</strong>
+
+            <p class="item-value" id="userFolder">
+                <script>$("#userFolder").text(JSON.stringify(Rho.Application.userFolder))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>version</strong>
+
+            <p class="item-value" id="version">
+                <script>$("#version").text(JSON.stringify(Rho.Application.version))</script>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+</script>
+
+</body>
+
+</html>
