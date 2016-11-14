@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
     <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+    <script type="text/javascript" src="/app/kitchensink-helpers.js"></script>
 
 </head>
 
@@ -42,16 +43,12 @@
 
 <script>
     $("#doAction").bind("click", function () {
-        $("hidden").addClass("hidden");
-        try {
-            Rho.AudioCapture.getAllProperties(function (properties) {
-                $("#result").removeClass("hidden");
-                $("#result").text(JSON.stringify(properties));
-            });
-        } catch (e) {
-            $("#error").removeClass("hidden");
-            $("#error").text(JSON.stringify(e));
-        }
+        Rho.Kitchensink.doWithCaution(function () {
+            Rho.AudioCapture.getAllProperties(function (anObject) {
+                        Rho.Kitchensink.resultJsonOutput(anObject);
+                    }
+            );
+        });
     });
 
 

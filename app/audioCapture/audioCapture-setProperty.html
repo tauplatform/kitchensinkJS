@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
     <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+    <script type="text/javascript" src="/app/kitchensink-helpers.js"></script>
 
 </head>
 
@@ -34,7 +35,8 @@
         <div class="form-group">
             <input type="text" id="value" class="form-control" placeholder="input value">
         </div>
-        <button type="button" id="setProperties" class="btn btn-primary btn-block">Call method setProperty</button>
+        <button type="button" id="setProperty" class="btn btn-primary btn-block">Call method setProperty</button>
+        <button type="button" id="getProperty" class="btn btn-primary btn-block">Call method getProperty</button>
     </form>
 
     <div class="result-area">
@@ -45,27 +47,20 @@
 </div>
 
 <script>
-    $("#setProperties").bind("click", function () {
-        $("hidden").addClass("hidden");
-        try {
-            $("#result").empty();
-            var property = Rho.AudioCapture.getProperty("fileName");
-            $("#result").append("<b>Previous value:</b><br/>");
-            $("#result").append(JSON.stringify(property));
-
+    $("#setProperty").bind("click", function () {
+        Rho.Kitchensink.doWithCaution(function () {
             var value = $("#value").val();
             Rho.AudioCapture.setProperty("fileName", value);
+            Rho.Kitchensink.resultOutput("The property \"fileName\" is set.");
+        });
+    });
 
-            $("#result").append("<br/><br/>");
-            $("#result").append("<b>New value:</b><br/>");
-            property = Rho.AudioCapture.getProperty("fileName");
-            $("#result").append(JSON.stringify(property));
-
-            $("#result").removeClass("hidden");
-        } catch (e) {
-            $("#error").removeClass("hidden");
-            $("#error").text(JSON.stringify(e));
-        }
+    $("#getProperty").bind("click", function () {
+        Rho.Kitchensink.doWithCaution(function () {
+            var value = Rho.AudioCapture.getProperty("fileName");
+            Rho.Kitchensink.resultOutput("Value of the property \"fileName\" is:");
+            Rho.Kitchensink.resultJsonOutput(value);
+        });
     });
 
 </script>

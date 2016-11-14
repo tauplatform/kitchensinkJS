@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
     <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+    <script type="text/javascript" src="/app/kitchensink-helpers.js"></script>
 
 </head>
 
@@ -33,6 +34,7 @@
 
     <form>
         <button type="button" id="setProperties" class="btn btn-primary btn-block">Call method setProperties</button>
+        <button type="button" id="getProperties" class="btn btn-primary btn-block">Call method getProperties</button>
     </form>
 
     <div class="result-area">
@@ -44,23 +46,18 @@
 
 <script>
     $("#setProperties").bind("click", function () {
-        $("hidden").addClass("hidden");
-        try {
-            $("#result").empty();
-            var properties = Rho.AudioCapture.getProperties(["fileName", "maxDuration"]);
-            $("#result").append("<b>Previous values:</b><br/>");
-            $("#result").append(JSON.stringify(properties));
+        Rho.Kitchensink.doWithCaution(function () {
             Rho.AudioCapture.setProperties({"fileName": "test.mp3", "maxDuration": "1000"});
-            $("#result").append("<br/><br/>");
-            $("#result").append("<b>New values:</b><br/>");
-            properties = Rho.AudioCapture.getProperties(["fileName", "maxDuration"]);
-            $("#result").append(JSON.stringify(properties));
+            Rho.Kitchensink.resultOutput("The properties are set.");
+        });
+    });
 
-            $("#result").removeClass("hidden");
-        } catch (e) {
-            $("#error").removeClass("hidden");
-            $("#error").text(JSON.stringify(e));
-        }
+    $("#getProperties").bind("click", function () {
+        Rho.Kitchensink.doWithCaution(function () {
+            var value = Rho.AudioCapture.getProperties(["fileName", "maxDuration"]);
+            Rho.Kitchensink.resultOutput("Values of the properties are:");
+            Rho.Kitchensink.resultJsonOutput(value);
+        });
     });
 
 </script>

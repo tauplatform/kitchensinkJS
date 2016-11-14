@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
     <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+    <script type="text/javascript" src="/app/kitchensink-helpers.js"></script>
 
 </head>
 
@@ -27,7 +28,8 @@
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
     </div>
 
-    <div class="alert alert-info" role="alert">Press the button below and values of the property "ID" will be requested
+    <div class="alert alert-info" role="alert">Press the button below and values of the property "maxDuration" will be
+        requested
     </div>
 
     <form>
@@ -44,18 +46,14 @@
 
 <script>
     $("#doAction").bind("click", function () {
-        $("hidden").addClass("hidden");
-        try {
-            Rho.AudioCapture.getProperty("ID",
-                    function (property) {
-                        $("#result").removeClass("hidden");
-                        $("#result").text(JSON.stringify(property));
+        Rho.Kitchensink.doWithCaution(function () {
+            Rho.AudioCapture.getProperty("maxDuration",
+                    function (anObject) {
+                        Rho.Kitchensink.resultOutput("Value of the property \"maxDuration\" is:");
+                        Rho.Kitchensink.resultJsonOutput(anObject);
                     }
             );
-        } catch (e) {
-            $("#error").removeClass("hidden");
-            $("#error").text(JSON.stringify(e));
-        }
+        });
     });
 
 

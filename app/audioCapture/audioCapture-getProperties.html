@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
     <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+    <script type="text/javascript" src="/app/kitchensink-helpers.js"></script>
 
 </head>
 
@@ -45,18 +46,14 @@
 
 <script>
     $("#doAction").bind("click", function () {
-        $("hidden").addClass("hidden");
-        try {
+        Rho.Kitchensink.doWithCaution(function () {
             Rho.AudioCapture.getProperties(["ID", "source", "fileName", "maxDuration"],
                     function (properties) {
-                        $("#result").removeClass("hidden");
-                        $("#result").text(JSON.stringify(properties));
+                        Rho.Kitchensink.resultOutput("Valued of the properties are:");
+                        Rho.Kitchensink.resultJsonOutput(properties);
                     }
             );
-        } catch (e) {
-            $("#error").removeClass("hidden");
-            $("#error").text(JSON.stringify(e));
-        }
+        });
     });
 
 
