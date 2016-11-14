@@ -37,6 +37,7 @@ win32:
 extensions:
   - audiocapture
   - barcode
+  - indicators
 
 rhobundle:
   exclude_items:

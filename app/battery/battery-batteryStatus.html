@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>KitchensinkJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" href="/public/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <script type="text/javascript" src="/public/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/public/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
+    <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+    <script type="text/javascript" src="/app/kitchensink-helpers.js"></script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row page-title">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <a href="battery.html" class="btn btn-default btn-sm">Back</a>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h4 class="text-center">Battery.batteryStatus</h4>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    </div>
+
+    <form>
+        <button type="button" id="periodically" class="btn btn-primary btn-block">Get batteryStatus periodically
+        </button>
+        <button type="button" id="batteryLevelChange" class="btn btn-primary btn-block">Get batteryStatus on changing of
+            the battery level
+        </button>
+        <button type="button" id="stopBatteryStatus" class="btn btn-primary btn-block">Call method stopBatteryStatus()
+        </button>
+    </form>
+
+    <div class="result-area">
+        <div id="result" class="alert alert-success hidden" role="alert"></div>
+        <div id="error" class="alert alert-danger hidden" role="alert"></div>
+    </div>
+
+</div>
+
+<script>
+    $("#periodically").bind("click", function () {
+        Rho.Kitchensink.doWithCaution(function () {
+            Rho.Battery.stopBatteryStatus();
+            Rho.Battery.batteryStatus({
+                trigger: Rho.Battery.BATTERY_TRIGGER_PERIODIC,
+                refreshInterval: 1000
+            }, function (value) {
+                Rho.Kitchensink.resultJsonOutput(value);
+            })
+        });
+    });
+
+    $("#batteryLevelChange").bind("click", function () {
+        Rho.Kitchensink.doWithCaution(function () {
+            Rho.Battery.stopBatteryStatus();
+            Rho.Battery.batteryStatus({
+                trigger: Rho.Battery.BATTERY_TRIGGER_SYSTEM,
+                refreshInterval: 1
+            }, function (value) {
+                Rho.Kitchensink.resultJsonOutput(value);
+            })
+        });
+    });
+
+    $("#stopBatteryStatus").bind("click", function () {
+        Rho.Kitchensink.doWithCaution(function () {
+            Rho.Battery.stopBatteryStatus();
+        });
+    });
+</script>
+
+</body>
+
+</html>
