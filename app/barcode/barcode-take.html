@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
     <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+    <script type="text/javascript" src="/app/kitchensink-helpers.js"></script>
 
 </head>
 
@@ -20,7 +21,7 @@
 <div class="container-fluid">
     <div class="row page-title">
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-            <a href="barcode.html" class="btn btn-default btn-sm">Back</a>
+            <a href="index.html" class="btn btn-default btn-sm">Back</a>
         </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h4 class="text-center">Barcode.take</h4>
         </div>
@@ -28,7 +29,7 @@
     </div>
 
     <form>
-        <button type="button" id="start" class="btn btn-primary btn-block">Call method take</button>
+        <button type="button" id="doAction" class="btn btn-primary btn-block">Call method take</button>
     </form>
 
     <div class="result-area">
@@ -39,11 +40,13 @@
 </div>
 
 <script>
-   Kithchensink.doWithCaution(functon(){
-       Rho.Barcode.take({}, function(value){
-           Kitchensink.resultJsonOutput(value);
-       })
-   });
+    $("#doAction").bind("click", function () {
+        Rho.Kitchensink.doWithCaution(function () {
+            Rho.Barcode.take({}, function (value) {
+                Rho.Kitchensink.resultJsonOutput(value);
+            });
+        });
+    });
 </script>
 
 </body>
