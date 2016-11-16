@@ -38,6 +38,7 @@ extensions:
   - audiocapture
   - barcode
   - indicators
+  - mediacapture
 
 rhobundle:
   exclude_items:
