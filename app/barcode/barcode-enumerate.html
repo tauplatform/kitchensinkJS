@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
     <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+    <script type="text/javascript" src="/app/kitchensink-helpers.js"></script>
 
 </head>
 
@@ -20,31 +21,36 @@
 <div class="container-fluid">
     <div class="row page-title">
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-            <a href="../index.html" class="btn btn-default btn-sm">Back</a>
+            <a href="index.html" class="btn btn-default btn-sm">Back</a>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h4 class="text-center">Barcode</h4></div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h4 class="text-center">Barcode.enumerate</h4>
         </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
     </div>
 
-    <div class="row">
-        <div class="list-group">
-            <a href="barcode-enumerate.html" class="list-group-item">
-                <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
-                Barcode.enumerate</a>
-            <a href="barcode-getAllProperties.html" class="list-group-item">
-                <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
-                Barcode.getAllProperties</a>
-            <a href="barcode-take.html" class="list-group-item">
-                <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
-                Barcode.take</a>
-        </div>
+
+    <form>
+        <button type="button" id="doAction" class="btn btn-primary btn-block">Call method enumerate</button>
+    </form>
+
+
+    <div class="result-area">
+        <div id="result" class="alert alert-success hidden" role="alert"></div>
+        <div id="error" class="alert alert-danger hidden" role="alert"></div>
     </div>
 
 </div>
 
 <script>
-
+    $("#doAction").bind("click", function () {
+        Rho.Kitchensink.doWithCaution(function () {
+            var types = [];
+            Rho.Barcode.enumerate().forEach(function (each) {
+                types.push(each.friendlyName);
+            });
+            Rho.Kitchensink.resultJsonOutput(types);
+        });
+    });
 </script>
 
 </body>
