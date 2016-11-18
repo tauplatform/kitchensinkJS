@@ -39,6 +39,10 @@ extensions:
   - barcode
   - indicators
   - mediacapture
+  - hardwarekeys
+
+capabilities:
+  - gps
 
 rhobundle:
   exclude_items:
