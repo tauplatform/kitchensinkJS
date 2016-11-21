@@ -1,4 +1,5 @@
 #sdk: "<path to your sdk here>"
+#sdk: "../../rhomobile/rhodes"
 sdkversion: 5.5.0
 name: kitchensinkJS
 version: 1.0
@@ -9,9 +10,6 @@ javascript_application: true
 iphone:
   configuration: Release
   sdk: iphonesimulator10.1
-  #provisionprofile:
-  #codesignidentity:
-  #entitlements:
   BundleIdentifier: com.rhomobile.kitchensinkjs
   BundleURLScheme: kitchensinkjs
   production:
@@ -40,6 +38,7 @@ extensions:
   - indicators
   - mediacapture
   - hardwarekeys
+  - mediaplayer
 
 capabilities:
   - gps
