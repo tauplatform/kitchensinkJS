@@ -43,7 +43,7 @@
 </div>
 
 <script>
-    $("#doAction").bind("click", function () {
+    $("#doAction").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.KeyCapture.captureTrigger(function (value) {
                 Rho.Kitchensink.resultJsonOutput(value)

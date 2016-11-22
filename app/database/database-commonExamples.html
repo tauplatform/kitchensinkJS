@@ -47,7 +47,7 @@
 </div>
 
 <script>
-    $("#createTable").bind("click", function () {
+    $("#createTable").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var tableName = $("#tableName").val();
             var db = new Rho.Database(Rho.Application.databaseFilePath('test'), 'test');
@@ -60,7 +60,7 @@
         });
     });
 
-    $("#showTables").bind("click", function () {
+    $("#showTables").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var db = new Rho.Database(Rho.Application.databaseFilePath('test'), 'test');
             try {
@@ -72,7 +72,7 @@
         });
     });
 
-    $("#destroyTable").bind("click", function () {
+    $("#destroyTable").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var tableName = $("#tableName").val();
             var db = new Rho.Database(Rho.Application.databaseFilePath('test'), 'test');

@@ -42,13 +42,13 @@
 </div>
 
 <script>
-    $("#showPreview").bind("click", function () {
+    $("#showPreview").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Camera.showPreview({left: 10, top: 10, layout: Rho.Battery.BATTERY_LAYOUT_UP});
         });
     });
 
-    $("#hidePreview").bind("click", function () {
+    $("#hidePreview").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Camera.hidePreview();
         });

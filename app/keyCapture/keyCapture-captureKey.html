@@ -44,7 +44,7 @@
 </div>
 
 <script>
-    $("#captureKey").bind("click", function () {
+    $("#captureKey").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.KeyCapture.captureKey(false, "ALL", function (value) {
                 Rho.Kitchensink.resultJsonOutput(value)
@@ -52,7 +52,7 @@
         });
     });
 
-    $("#stopCaptureKey").bind("click", function () {
+    $("#stopCaptureKey").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.KeyCapture.captureKey(false, "ALL");
         });

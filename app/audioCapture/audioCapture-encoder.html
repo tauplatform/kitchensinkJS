@@ -42,7 +42,7 @@
 
 <script>
     //TODO: use doWithCaution here
-    $("#doAction").bind("click", function () {
+    $("#doAction").on("click", function () {
         $("hidden").addClass("hidden");
         try {
             var value = Rho.AudioCapture.encoder;

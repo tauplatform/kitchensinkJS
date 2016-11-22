@@ -42,13 +42,13 @@
 </div>
 
 <script>
-    $("#showStates").bind("click", function () {
+    $("#showStates").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.KeyState.showStates({width:25, height:25});
         });
     });
 
-    $("#hideStates").bind("click", function () {
+    $("#hideStates").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.KeyState.hideStates();
         });

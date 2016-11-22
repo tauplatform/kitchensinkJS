@@ -46,7 +46,7 @@
 </div>
 
 <script>
-    $("#setProperty").bind("click", function () {
+    $("#setProperty").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var value = $("#value").val();
             Rho.AudioCapture.maxDuration = value;
@@ -54,7 +54,7 @@
         });
     });
 
-    $("#getProperty").bind("click", function () {
+    $("#getProperty").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var value = Rho.AudioCapture.maxDuration;
             Rho.Kitchensink.resultOutput("The value of property \"maxDuration\" is:");

@@ -45,14 +45,14 @@
 </div>
 
 <script>
-    $("#setProperties").bind("click", function () {
+    $("#setProperties").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.AudioCapture.setProperties({"fileName": "test.mp3", "maxDuration": "1000"});
             Rho.Kitchensink.resultOutput("The properties are set.");
         });
     });
 
-    $("#getProperties").bind("click", function () {
+    $("#getProperties").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var value = Rho.AudioCapture.getProperties(["fileName", "maxDuration"]);
             Rho.Kitchensink.resultOutput("Values of the properties are:");

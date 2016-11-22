@@ -45,7 +45,7 @@
 </div>
 
 <script>
-    $("#doAction").bind("click", function () {
+    $("#doAction").on("click", function () {
         Rho.Application.setApplicationNotify(function (params) {
             $("#result").removeClass("hidden");
             $("#result").append(JSON.stringify(params) + "<br />");

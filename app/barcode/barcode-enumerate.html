@@ -42,7 +42,7 @@
 </div>
 
 <script>
-    $("#doAction").bind("click", function () {
+    $("#doAction").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var types = [];
             Rho.Barcode.enumerate().forEach(function (each) {

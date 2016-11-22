@@ -48,7 +48,7 @@
 </div>
 
 <script>
-    $("#setProperty").bind("click", function () {
+    $("#setProperty").on("click", function () {
         var name = $("#propertyName").val();
         var value = $("#propertyValue").val();
         Rho.Kitchensink.doWithCaution(function () {
@@ -57,7 +57,7 @@
         });
     });
 
-    $("#getProperty").bind("click", function () {
+    $("#getProperty").on("click", function () {
         var name = $("#propertyName").val();
         Rho.Kitchensink.doWithCaution(function () {
             var value = Rho.Config.getPropertyString(name);

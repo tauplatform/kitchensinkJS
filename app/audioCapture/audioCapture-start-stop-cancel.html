@@ -56,7 +56,7 @@
                 .text(JSON.stringify(anObject));
     };
 
-    $("#start").bind("click", function () {
+    $("#start").on("click", function () {
         $("hidden").addClass("hidden");
         $("#result").empty();
         try {
@@ -72,7 +72,7 @@
         }
     });
 
-    $("#stop").bind("click", function () {
+    $("#stop").on("click", function () {
         try {
             Rho.AudioCapture.stop();
             resultOutput("Audio capturing is stopped");
@@ -81,7 +81,7 @@
         }
     });
 
-    $("#cancel").bind("click", function () {
+    $("#cancel").on("click", function () {
         try {
             Rho.AudioCapture.cancel();
             resultOutput("Audio capturing is cancelled");

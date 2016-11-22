@@ -47,7 +47,7 @@
 </div>
 
 <script>
-    $("#doAction").bind("click", function () {
+    $("#doAction").on("click", function () {
         $("hidden").addClass("hidden");
         try {
             var arg = $("#value").val();

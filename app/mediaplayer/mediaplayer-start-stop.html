@@ -45,21 +45,21 @@
 
 <script>
 
-    $("#startWAV").bind("click", function () {
+    $("#startWAV").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var path = Rho.RhoFile.join(Rho.Application.appsBundleFolder, "public/sounds/cannon-fodder.wav");
             Rho.Mediaplayer.start(path);
         });
     });
 
-    $("#startMP3").bind("click", function () {
+    $("#startMP3").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var path = Rho.RhoFile.join(Rho.Application.appsBundleFolder, "public/sounds/cannon-fodder.mp3");
             Rho.Mediaplayer.start(path);
         });
     });
 
-    $("#stop").bind("click", function () {
+    $("#stop").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Mediaplayer.stop();
         });

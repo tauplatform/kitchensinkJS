@@ -42,7 +42,7 @@
 </div>
 
 <script>
-    $("#doAction").bind("click", function () {
+    $("#doAction").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var value = Rho.Camera.getAllProperties();
             Rho.Kitchensink.resultJsonOutput(value);

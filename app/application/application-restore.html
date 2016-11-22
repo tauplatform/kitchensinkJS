@@ -44,7 +44,7 @@
 </div>
 
 <script>
-    $("#doAction").bind("click", function () {
+    $("#doAction").on("click", function () {
         Rho.Application.minimize();
         setTimeout(function () {
             $("#result").removeClass("hidden");

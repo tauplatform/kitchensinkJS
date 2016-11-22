@@ -41,7 +41,7 @@
 </div>
 
 <script>
-    $("#doAction").bind("click", function () {
+    $("#doAction").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Log.showLog();
         });

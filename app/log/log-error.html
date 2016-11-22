@@ -47,7 +47,7 @@
 </div>
 
 <script>
-    $("#writeError").bind("click", function () {
+    $("#writeError").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var message = $("#message").val();
             Rho.Log.error(message, "error");
@@ -55,14 +55,14 @@
         });
     });
 
-    $("#cleanLogFile").bind("click", function () {
+    $("#cleanLogFile").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Log.cleanLogFile();
             Rho.Kitchensink.resultOutput("Log file has been cleaned");
         });
     });
 
-    $("#showLogFile").bind("click", function () {
+    $("#showLogFile").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Log.showLog();
         });

@@ -45,7 +45,7 @@
 </div>
 
 <script>
-    $("#periodically").bind("click", function () {
+    $("#periodically").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Battery.stopBatteryStatus();
             Rho.Battery.batteryStatus({
@@ -57,7 +57,7 @@
         });
     });
 
-    $("#batteryLevelChange").bind("click", function () {
+    $("#batteryLevelChange").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Battery.stopBatteryStatus();
             Rho.Battery.batteryStatus({
@@ -69,7 +69,7 @@
         });
     });
 
-    $("#stopBatteryStatus").bind("click", function () {
+    $("#stopBatteryStatus").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Battery.stopBatteryStatus();
         });

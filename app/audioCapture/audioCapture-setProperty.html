@@ -47,7 +47,7 @@
 </div>
 
 <script>
-    $("#setProperty").bind("click", function () {
+    $("#setProperty").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var value = $("#value").val();
             Rho.AudioCapture.setProperty("fileName", value);
@@ -55,7 +55,7 @@
         });
     });
 
-    $("#getProperty").bind("click", function () {
+    $("#getProperty").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var value = Rho.AudioCapture.getProperty("fileName");
             Rho.Kitchensink.resultOutput("Value of the property \"fileName\" is:");

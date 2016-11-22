@@ -46,7 +46,7 @@
 
 <script>
     //TODO: use doWithCaution here
-    $("#setProperty").bind("click", function () {
+    $("#setProperty").on("click", function () {
         $("hidden").addClass("hidden");
         try {
             var value = $("#value").val();
@@ -57,7 +57,7 @@
         }
 
     });
-    $("#getProperty").bind("click", function () {
+    $("#getProperty").on("click", function () {
         $("hidden").addClass("hidden");
         try {
             var value = Rho.AudioCapture.fileName;

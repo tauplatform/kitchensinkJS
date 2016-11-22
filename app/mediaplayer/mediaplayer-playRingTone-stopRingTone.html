@@ -54,14 +54,14 @@
     });
 
 
-    $("#playRingTone").bind("click", function () {
+    $("#playRingTone").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var value = $("#ringtones").val();
             Rho.Mediaplayer.playRingTone(value);
         });
     });
 
-    $("#stopRingTone").bind("click", function () {
+    $("#stopRingTone").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Mediaplayer.stopRingTone();
         });

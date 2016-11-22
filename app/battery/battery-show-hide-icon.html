@@ -45,13 +45,13 @@
 </div>
 
 <script>
-    $("#showIcon").bind("click", function () {
+    $("#showIcon").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Battery.showIcon({left: 10, top: 10, layout: Rho.Battery.BATTERY_LAYOUT_UP});
         });
     });
 
-    $("#hideIcon").bind("click", function () {
+    $("#hideIcon").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Battery.hideIcon();
         });

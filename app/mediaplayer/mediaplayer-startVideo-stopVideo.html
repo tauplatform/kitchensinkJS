@@ -48,7 +48,7 @@
 
 <script>
 
-    $("#startVideo3gp").bind("click", function () {
+    $("#startVideo3gp").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var path = Rho.RhoFile.join(Rho.Application.appsBundleFolder, "public/video/SampleVideo_320x240_1mb.3gp");
             Rho.Mediaplayer.startvideo(path);
@@ -56,7 +56,7 @@
         });
     });
 
-    $("#startVideoMkv").bind("click", function () {
+    $("#startVideoMkv").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var path = Rho.RhoFile.join(Rho.Application.appsBundleFolder, "public/video/SampleVideo_320x240_1mb.mkv");
             Rho.Mediaplayer.startvideo(path);
@@ -64,7 +64,7 @@
         });
     });
 
-    $("#startVideoMp4").bind("click", function () {
+    $("#startVideoMp4").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var path = Rho.RhoFile.join(Rho.Application.appsBundleFolder, "public/video/SampleVideo_320x240_1mb.mp4");
             Rho.Mediaplayer.startvideo(path);
@@ -72,7 +72,7 @@
         });
     });
 
-    $("#startVideoFlv").bind("click", function () {
+    $("#startVideoFlv").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var path = Rho.RhoFile.join(Rho.Application.appsBundleFolder, "public/video/SampleVideo_320x240_1mb.flv");
             Rho.Mediaplayer.startvideo(path);

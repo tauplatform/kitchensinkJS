@@ -42,7 +42,7 @@
 </div>
 
 <script>
-    $("#doAction").bind("click", function () {
+    $("#doAction").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Mediaplayer.getAllRingtones(function (value) {
                 Rho.Kitchensink.resultJsonOutput(value);

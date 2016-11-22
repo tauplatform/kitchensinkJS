@@ -44,7 +44,7 @@
 
 <script>
 
-    $("#create").bind("click", function () {
+    $("#create").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.NativeToolbar.create([
                 {
@@ -70,7 +70,7 @@
         });
     });
 
-    $("#remove").bind("click", function () {
+    $("#remove").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.NativeToolbar.remove();
         });

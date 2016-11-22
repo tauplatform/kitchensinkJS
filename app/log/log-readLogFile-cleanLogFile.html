@@ -42,7 +42,7 @@
 </div>
 
 <script>
-    $("#readLogFile").bind("click", function () {
+    $("#readLogFile").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var value = Rho.Log.readLogFile(2000);
             if (value == null) {
@@ -54,7 +54,7 @@
         });
     });
 
-    $("#cleanLogFile").bind("click", function () {
+    $("#cleanLogFile").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Log.cleanLogFile();
             Rho.Kitchensink.resultOutput("Log file has been cleaned");

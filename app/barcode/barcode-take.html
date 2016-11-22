@@ -40,7 +40,7 @@
 </div>
 
 <script>
-    $("#doAction").bind("click", function () {
+    $("#doAction").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Barcode.take({}, function (value) {
                 Rho.Kitchensink.resultJsonOutput(value);
