@@ -23,14 +23,15 @@
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
             <a href="index.html" class="btn btn-default btn-sm">Back</a>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h4 class="text-center">NativeTabbar.create</h4>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h4 class="text-center">NativeToolbar.create/remove</h4>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
     </div>
 
 
     <form>
-        <button type="button" id="doAction" class="btn btn-primary btn-block">Call method create</button>
+        <button type="button" id="create" class="btn btn-primary btn-block">Call method create</button>
+        <button type="button" id="remove" class="btn btn-primary btn-block">Call method remove</button>
     </form>
 
 
@@ -42,28 +43,36 @@
 </div>
 
 <script>
-    var callback = function (anObject) {
-        alert(anObject);
-    };
 
-    $("#doAction").bind("click", function () {
+    $("#create").bind("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
-            Rho.NativeTabbar.create([
+            Rho.NativeToolbar.create([
                 {
-                    label: "NativeTabbar\nexamples",
-                    action: "/app/nativeTabbar/page-a.html"
+                    label: "Home",
+                    action: Rho.Application.startURI,
+                    coloredIcon: true
                 },
                 {
-                    label: "KitchensinJS",
                     action: "/app/index.html",
                     icon: "icon/icon.png"
                 },
                 {
-                    label: "Google",
+                    action: "refresh"
+                },
+                {
+                    action: "separator"
+                },
+                {
+                    label: "google",
                     action: "http://www.google.com",
                     icon: "public/images/google.jpeg"
-                }
-            ], {backgroundColor: 11674146}, callback);
+                }], {backgroundColor: 11674146})
+        });
+    });
+
+    $("#remove").bind("click", function () {
+        Rho.Kitchensink.doWithCaution(function () {
+            Rho.NativeToolbar.remove();
         });
     });
 
