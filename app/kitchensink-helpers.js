@@ -8,7 +8,8 @@ Rho.Kitchensink.doWithCaution = function (aFunction) {
         aFunction();
     }
     catch (e) {
-        Rho.Kitchensink.errorOutput(JSON.stringify(e));
+        console.log(e);
+        Rho.Kitchensink.errorOutput(e);
     }
 };
 
