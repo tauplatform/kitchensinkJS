@@ -13,6 +13,17 @@ Rho.Kitchensink.doWithCaution = function (aFunction) {
     }
 };
 
+Rho.Kitchensink.inlineDoWithCaution = function (aFunction) {
+    var result;
+    try {
+        result =  aFunction();
+    }
+    catch (e) {
+        result = e;
+    }
+    return JSON.stringify(result, null, 4);
+};
+
 
 Rho.Kitchensink.resultOutput = function (aString) {
     $("#result").removeClass("hidden")
@@ -25,7 +36,6 @@ Rho.Kitchensink.resultJsonOutput = function (anObject) {
         .append("<pre>" + JSON.stringify(anObject, null, 4) + "</pre>")
         .append("<br/>");
 };
-
 
 
 Rho.Kitchensink.errorOutput = function (aString) {
