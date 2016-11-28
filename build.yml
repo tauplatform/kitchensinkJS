@@ -1,5 +1,5 @@
 #sdk: "<path to your sdk here>"
-#sdk: "../../rhomobile/rhodes"
+sdk: "../../rhomobile/rhodes"
 sdkversion: 5.5.0
 name: kitchensinkJS
 version: 1.0
@@ -7,6 +7,7 @@ vendor: rhomobile
 build: debug
 applog: rholog.txt
 javascript_application: true
+#ajax_api_bridge: true
 iphone:
   configuration: Release
   sdk: iphonesimulator10.1
@@ -39,6 +40,8 @@ extensions:
   - mediacapture
   - hardwarekeys
   - mediaplayer
+  - printing
+  #- printing_zebra
 
 capabilities:
   - gps

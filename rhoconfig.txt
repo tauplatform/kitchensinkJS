@@ -119,8 +119,8 @@ splash_screen='zoom'
 
 use_bb_full_browser=6
 
-ios_direct_local_requests = 0
-ios_use_WKWebView = 1
+#ios_direct_local_requests = 0
+#ios_use_WKWebView = 1
 #ATTENTION !!! this option works only with ios_direct_local_requests = 0 !!!
 #default value is FALSE
 # If TRUE WKWebView new iOS high performance(Javascript performance up to 10 times faster than default UIWebView) WebView used instead of default UIWebView.

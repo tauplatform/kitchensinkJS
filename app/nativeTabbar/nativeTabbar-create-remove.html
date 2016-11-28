@@ -50,19 +50,21 @@
         Rho.Kitchensink.doWithCaution(function () {
             Rho.NativeTabbar.create([
                 {
-                    label: "NativeTabbar\nexamples",
-                    action: "/app/nativeTabbar/page-a.html"
+                    label: "KitchensinkJS",
+                    action: "/app/nativeTabbar/index.html",
+                    icon: "/public/images/mobile_phone_24.png"
                 },
+
                 {
-                    action: "/app/index.html",
-                    icon: "icon/icon.png"
+                    label: "Using NativeTabbar",
+                    action: "/app/nativeTabbar/page-a.html",
+                    icon: "/public/images/chatting_32.png"
                 },
                 {
                     label: "Google",
-                    action: "http://www.google.com",
-                    icon: "public/images/google.jpeg"
+                    action: "http://www.google.com"
                 }
-            ], {backgroundColor: 11674146}, callback);
+            ], {backgroundColor: 0xB22222});
         });
     });
 
