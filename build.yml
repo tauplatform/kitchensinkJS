@@ -44,6 +44,7 @@ extensions:
   #- printing_zebra
   - sensor
   - indicators
+  - signature
 
 capabilities:
   - gps

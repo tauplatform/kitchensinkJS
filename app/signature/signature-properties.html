@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>KitchensinkJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" href="/public/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <script type="text/javascript" src="/public/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/public/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
+    <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row page-title">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <a href="index.html" class="btn btn-default btn-sm">Back</a>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h4 class="text-center">Signature properties</h4></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    </div>
+
+    <div class="list-group">
+
+        <div class="list-group-item">
+            <strong>bgColor</strong>
+
+            <p class="item-value" id="bgColor">
+                <script>$("#bgColor").text(JSON.stringify(Rho.Signature.bgColor))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>border</strong>
+
+            <p class="item-value" id="border">
+                <script>$("#border").text(JSON.stringify(Rho.Signature.border))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>compressionFormat</strong>
+
+            <p class="item-value" id="compressionFormat">
+                <script>$("#compressionFormat").text(JSON.stringify(Rho.Signature.compressionFormat))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>fileName</strong>
+
+            <p class="item-value" id="fileName">
+                <script>$("#fileName").text(JSON.stringify(Rho.Signature.fileName))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>height</strong>
+
+            <p class="item-value" id="height">
+                <script>$("#height").text(JSON.stringify(Rho.Signature.height))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>left</strong>
+
+            <p class="item-value" id="left">
+                <script>$("#left").text(JSON.stringify(Rho.Signature.left))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>outputFormat</strong>
+
+            <p class="item-value" id="outputFormat">
+                <script>$("#outputFormat").text(JSON.stringify(Rho.Signature.outputFormat))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>penColor</strong>
+
+            <p class="item-value" id="penColor">
+                <script>$("#penColor").text(JSON.stringify(Rho.Signature.penColor))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>penWidth</strong>
+
+            <p class="item-value" id="penWidth">
+                <script>$("#penWidth").text(JSON.stringify(Rho.Signature.penWidth))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>top</strong>
+
+            <p class="item-value" id="top">
+                <script>$("#top").text(JSON.stringify(Rho.Signature.top))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>width</strong>
+
+            <p class="item-value" id="width">
+                <script>$("#width").text(JSON.stringify(Rho.Signature.width))</script>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+</script>
+
+</body>
+
+</html>
