@@ -51,14 +51,14 @@
         Rho.Kitchensink.doWithCaution(function () {
             var message = $("#message").val();
             Rho.Log.error(message, "error");
-            Rho.Kitchensink.resultOutput("The message has been written");
+            Rho.Kitchensink.appendSuccessOutput("The message has been written");
         });
     });
 
     $("#cleanLogFile").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Log.cleanLogFile();
-            Rho.Kitchensink.resultOutput("Log file has been cleaned");
+            Rho.Kitchensink.appendSuccessOutput("Log file has been cleaned");
         });
     });
 

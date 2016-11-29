@@ -44,7 +44,7 @@
     $("#doAction").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Camera.takePicture({}, function(value){
-                Rho.Kitchensink.resultJsonOutput(value);
+                Rho.Kitchensink.appendSuccessOutputAsJson(value);
             });
         });
     });

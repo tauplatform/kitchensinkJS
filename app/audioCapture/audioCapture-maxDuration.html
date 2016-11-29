@@ -50,15 +50,15 @@
         Rho.Kitchensink.doWithCaution(function () {
             var value = $("#value").val();
             Rho.AudioCapture.maxDuration = value;
-            Rho.Kitchensink.resultOutput("The property \"maxDuration\" is set.");
+            Rho.Kitchensink.appendSuccessOutput("The property \"maxDuration\" is set.");
         });
     });
 
     $("#getProperty").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var value = Rho.AudioCapture.maxDuration;
-            Rho.Kitchensink.resultOutput("The value of property \"maxDuration\" is:");
-            Rho.Kitchensink.resultJsonOutput(value);
+            Rho.Kitchensink.appendSuccessOutput("The value of property \"maxDuration\" is:");
+            Rho.Kitchensink.appendSuccessOutputAsJson(value);
 
         });
     });

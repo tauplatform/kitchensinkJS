@@ -51,15 +51,15 @@
         Rho.Kitchensink.doWithCaution(function () {
             var value = $("#value").val();
             Rho.AudioCapture.setProperty("fileName", value);
-            Rho.Kitchensink.resultOutput("The property \"fileName\" is set.");
+            Rho.Kitchensink.appendSuccessOutput("The property \"fileName\" is set.");
         });
     });
 
     $("#getProperty").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var value = Rho.AudioCapture.getProperty("fileName");
-            Rho.Kitchensink.resultOutput("Value of the property \"fileName\" is:");
-            Rho.Kitchensink.resultJsonOutput(value);
+            Rho.Kitchensink.appendSuccessOutput("Value of the property \"fileName\" is:");
+            Rho.Kitchensink.appendSuccessOutputAsJson(value);
         });
     });
 

@@ -47,7 +47,7 @@
     $("#captureKey").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.KeyCapture.captureKey(false, "ALL", function (value) {
-                Rho.Kitchensink.resultJsonOutput(value)
+                Rho.Kitchensink.appendSuccessOutputAsJson(value)
             });
         });
     });

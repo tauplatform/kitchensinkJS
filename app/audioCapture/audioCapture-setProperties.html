@@ -48,15 +48,15 @@
     $("#setProperties").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.AudioCapture.setProperties({"fileName": "test.mp3", "maxDuration": "1000"});
-            Rho.Kitchensink.resultOutput("The properties are set.");
+            Rho.Kitchensink.appendSuccessOutput("The properties are set.");
         });
     });
 
     $("#getProperties").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var value = Rho.AudioCapture.getProperties(["fileName", "maxDuration"]);
-            Rho.Kitchensink.resultOutput("Values of the properties are:");
-            Rho.Kitchensink.resultJsonOutput(value);
+            Rho.Kitchensink.appendSuccessOutput("Values of the properties are:");
+            Rho.Kitchensink.appendSuccessOutputAsJson(value);
         });
     });
 

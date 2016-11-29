@@ -53,7 +53,7 @@
             var db = new Rho.Database(Rho.Application.databaseFilePath('test'), 'test');
             try {
                 db.executeSql("create table " + tableName + "(a, b);");
-                Rho.Kitchensink.resultJsonOutput("Table has been created");
+                Rho.Kitchensink.appendSuccessOutputAsJson("Table has been created");
             } finally {
                 db.close();
             }
@@ -65,7 +65,7 @@
             var db = new Rho.Database(Rho.Application.databaseFilePath('test'), 'test');
             try {
                 var value = db.executeSql("SELECT name FROM sqlite_master WHERE type='table'");
-                Rho.Kitchensink.resultJsonOutput(value);
+                Rho.Kitchensink.appendSuccessOutputAsJson(value);
             } finally {
                 db.close();
             }
@@ -78,7 +78,7 @@
             var db = new Rho.Database(Rho.Application.databaseFilePath('test'), 'test');
             try {
                 db.destroyTable(tableName);
-                Rho.Kitchensink.resultJsonOutput("Table has been destroyed");
+                Rho.Kitchensink.appendSuccessOutputAsJson("Table has been destroyed");
             } finally {
                 db.close();
             }

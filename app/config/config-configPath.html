@@ -45,7 +45,7 @@
     $("#doAction").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             var value = Rho.Config.configPath;
-            Rho.Kitchensink.resultJsonOutput(value);
+            Rho.Kitchensink.appendSuccessOutputAsJson(value);
         });
     });
 </script>

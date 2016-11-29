@@ -42,6 +42,7 @@ extensions:
   - mediaplayer
   - printing
   #- printing_zebra
+  - sensor
 
 capabilities:
   - gps

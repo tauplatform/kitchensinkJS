@@ -46,10 +46,10 @@
         Rho.Kitchensink.doWithCaution(function () {
             var value = Rho.Log.readLogFile(2000);
             if (value == null) {
-                Rho.Kitchensink.resultOutput("Log file is empty");
+                Rho.Kitchensink.appendSuccessOutput("Log file is empty");
             }
             else {
-                Rho.Kitchensink.resultOutput(value);
+                Rho.Kitchensink.appendSuccessOutput(value);
             }
         });
     });
@@ -57,7 +57,7 @@
     $("#cleanLogFile").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Log.cleanLogFile();
-            Rho.Kitchensink.resultOutput("Log file has been cleaned");
+            Rho.Kitchensink.appendSuccessOutput("Log file has been cleaned");
         });
     });
 

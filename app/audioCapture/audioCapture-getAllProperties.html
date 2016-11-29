@@ -45,7 +45,7 @@
     $("#doAction").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.AudioCapture.getAllProperties(function (anObject) {
-                        Rho.Kitchensink.resultJsonOutput(anObject);
+                        Rho.Kitchensink.appendSuccessOutputAsJson(anObject);
                     }
             );
         });

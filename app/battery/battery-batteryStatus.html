@@ -52,7 +52,7 @@
                 trigger: Rho.Battery.BATTERY_TRIGGER_PERIODIC,
                 refreshInterval: 1000
             }, function (value) {
-                Rho.Kitchensink.resultJsonOutput(value);
+                Rho.Kitchensink.appendSuccessOutputAsJson(value);
             })
         });
     });
@@ -64,7 +64,7 @@
                 trigger: Rho.Battery.BATTERY_TRIGGER_SYSTEM,
                 refreshInterval: 1
             }, function (value) {
-                Rho.Kitchensink.resultJsonOutput(value);
+                Rho.Kitchensink.appendSuccessOutputAsJson(value);
             })
         });
     });

@@ -49,7 +49,7 @@
     $("#startStatusNotify").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Network.startStatusNotify(1, function (value) {
-                Rho.Kitchensink.resultJsonOutput(value)
+                Rho.Kitchensink.appendSuccessOutputAsJson(value)
             });
         });
     });

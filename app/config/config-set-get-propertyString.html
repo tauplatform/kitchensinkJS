@@ -53,7 +53,7 @@
         var value = $("#propertyValue").val();
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Config.setPropertyString(name, value, true);
-            Rho.Kitchensink.resultJsonOutput("Property has been set");
+            Rho.Kitchensink.appendSuccessOutputAsJson("Property has been set");
         });
     });
 
@@ -61,7 +61,7 @@
         var name = $("#propertyName").val();
         Rho.Kitchensink.doWithCaution(function () {
             var value = Rho.Config.getPropertyString(name);
-            Rho.Kitchensink.resultJsonOutput(value);
+            Rho.Kitchensink.appendSuccessOutputAsJson(value);
         });
     });
 </script>

@@ -49,7 +49,7 @@
             var ip = $("#ip").val();
             Rho.Printer.setProperty("deviceAddress", ip);
             Rho.Printer.connect(function (value) {
-                Rho.Kitchensink.resultJsonOutput(value)
+                Rho.Kitchensink.appendSuccessOutputAsJson(value)
             })
         });
     });

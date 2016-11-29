@@ -16,7 +16,7 @@ Rho.Kitchensink.doWithCaution = function (aFunction) {
 Rho.Kitchensink.inlineDoWithCaution = function (aFunction) {
     var result;
     try {
-        result =  aFunction();
+        result = aFunction();
     }
     catch (e) {
         result = e;
@@ -24,17 +24,27 @@ Rho.Kitchensink.inlineDoWithCaution = function (aFunction) {
     return JSON.stringify(result, null, 4);
 };
 
+Rho.Kitchensink.successOutput = function (aString) {
+    $("#result").removeClass("hidden").text(aString);
+};
 
-Rho.Kitchensink.resultOutput = function (aString) {
+Rho.Kitchensink.successOutputAsJson = function (anObject) {
+    var item = $("<pre>");
+    item.text(JSON.stringify(anObject, null, 4));
+    $("#result").removeClass("hidden").empty().append(item);
+};
+
+
+Rho.Kitchensink.appendSuccessOutput = function (aString) {
     $("#result").removeClass("hidden")
         .append(aString)
         .append("<br/>");
 };
 
-Rho.Kitchensink.resultJsonOutput = function (anObject) {
-    $("#result").removeClass("hidden")
-        .append("<pre>" + JSON.stringify(anObject, null, 4) + "</pre>")
-        .append("<br/>");
+Rho.Kitchensink.appendSuccessOutputAsJson = function (anObject) {
+    var item = $("<pre>");
+    item.text(JSON.stringify(anObject, null, 4));
+    $("#result").removeClass("hidden").append(item);
 };
 
 

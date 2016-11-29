@@ -49,8 +49,8 @@
         Rho.Kitchensink.doWithCaution(function () {
             Rho.AudioCapture.getProperty("maxDuration",
                     function (anObject) {
-                        Rho.Kitchensink.resultOutput("Value of the property \"maxDuration\" is:");
-                        Rho.Kitchensink.resultJsonOutput(anObject);
+                        Rho.Kitchensink.appendSuccessOutput("Value of the property \"maxDuration\" is:");
+                        Rho.Kitchensink.appendSuccessOutputAsJson(anObject);
                     }
             );
         });

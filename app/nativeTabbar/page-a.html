@@ -45,7 +45,7 @@
 <script>
     $("#currentTab").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
-            Rho.Kitchensink.resultJsonOutput(Rho.NativeTabbar.currentTabIndex());
+            Rho.Kitchensink.appendSuccessOutputAsJson(Rho.NativeTabbar.currentTabIndex());
         });
     });
     $("#switchTab").on("click", function () {
