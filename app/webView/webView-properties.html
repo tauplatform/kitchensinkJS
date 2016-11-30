@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>KitchensinkJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" href="/public/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <script type="text/javascript" src="/public/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/public/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
+    <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row page-title">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <a href="index.html" class="btn btn-default btn-sm">Back</a>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h4 class="text-center">WebView properties</h4></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    </div>
+
+    <div class="list-group">
+
+        <div class="list-group-item">
+            <strong>activeTab</strong>
+
+            <p class="item-value" id="activeTab">
+                <script>$("#activeTab").text(JSON.stringify(Rho.WebView.activeTab))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>cacheSize</strong>
+
+            <p class="item-value" id="cacheSize">
+                <script>$("#cacheSize").text(JSON.stringify(Rho.WebView.cacheSize))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>enableCache</strong>
+
+            <p class="item-value" id="enableCache">
+                <script>$("#enableCache").text(JSON.stringify(Rho.WebView.enableCache))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>enablePageLoadingIndication</strong>
+
+            <p class="item-value" id="enablePageLoadingIndication">
+                <script>$("#enablePageLoadingIndication").text(JSON.stringify(Rho.WebView.enablePageLoadingIndication))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>enableWebPlugins</strong>
+
+            <p class="item-value" id="enableWebPlugins">
+                <script>$("#enableWebPlugins").text(JSON.stringify(Rho.WebView.enableWebPlugins))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>enableZoom</strong>
+
+            <p class="item-value" id="enableZoom">
+                <script>$("#enableZoom").text(JSON.stringify(Rho.WebView.enableZoom))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>fontFamily</strong>
+
+            <p class="item-value" id="fontFamily">
+                <script>$("#fontFamily").text(JSON.stringify(Rho.WebView.fontFamily))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>framework</strong>
+
+            <p class="item-value" id="framework">
+                <script>$("#framework").text(JSON.stringify(Rho.WebView.framework))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>fullScreen</strong>
+
+            <p class="item-value" id="fullScreen">
+                <script>$("#fullScreen").text(JSON.stringify(Rho.WebView.fullScreen))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>navigationTimeout</strong>
+
+            <p class="item-value" id="navigationTimeout">
+                <script>$("#navigationTimeout").text(JSON.stringify(Rho.WebView.navigationTimeout))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>scrollTechnique</strong>
+
+            <p class="item-value" id="scrollTechnique">
+                <script>$("#scrollTechnique").text(JSON.stringify(Rho.WebView.scrollTechnique))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>textZoomLevel</strong>
+
+            <p class="item-value" id="textZoomLevel">
+                <script>$("#textZoomLevel").text(JSON.stringify(Rho.WebView.textZoomLevel))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>userAgent</strong>
+
+            <p class="item-value" id="userAgent">
+                <script>$("#userAgent").text(JSON.stringify(Rho.WebView.userAgent))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>viewportEnabled</strong>
+
+            <p class="item-value" id="viewportEnabled">
+                <script>$("#viewportEnabled").text(JSON.stringify(Rho.WebView.viewportEnabled))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>viewportWidth</strong>
+
+            <p class="item-value" id="viewportWidth">
+                <script>$("#viewportWidth").text(JSON.stringify(Rho.WebView.viewportWidth))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>zoomPage</strong>
+
+            <p class="item-value" id="zoomPage">
+                <script>$("#zoomPage").text(JSON.stringify(Rho.WebView.zoomPage))</script>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>KitchensinkJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" href="/public/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <script type="text/javascript" src="/public/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/public/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
+    <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row page-title">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <a href="index.html" class="btn btn-default btn-sm">Back</a>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h4 class="text-center">System properties</h4></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    </div>
+
+    <div class="list-group">
+
+        <div class="list-group-item">
+            <strong>applicationIconBadge</strong>
+
+            <p class="item-value" id="applicationIconBadge">
+                <script>$("#applicationIconBadge").text(JSON.stringify(Rho.System.applicationIconBadge))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>country</strong>
+
+            <p class="item-value" id="country">
+                <script>$("#country").text(JSON.stringify(Rho.System.country))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>deviceName</strong>
+
+            <p class="item-value" id="deviceName">
+                <script>$("#deviceName").text(JSON.stringify(Rho.System.deviceName))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>deviceOwnerEmail</strong>
+
+            <p class="item-value" id="deviceOwnerEmail">
+                <script>$("#deviceOwnerEmail").text(JSON.stringify(Rho.System.deviceOwnerEmail))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>deviceOwnerName</strong>
+
+            <p class="item-value" id="deviceOwnerName">
+                <script>$("#deviceOwnerName").text(JSON.stringify(Rho.System.deviceOwnerName))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>devicePushId</strong>
+
+            <p class="item-value" id="devicePushId">
+                <script>$("#devicePushId").text(JSON.stringify(Rho.System.devicePushId))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>freeServerPort</strong>
+
+            <p class="item-value" id="freeServerPort">
+                <script>$("#freeServerPort").text(JSON.stringify(Rho.System.freeServerPort))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>hasCalendar</strong>
+
+            <p class="item-value" id="hasCalendar">
+                <script>$("#hasCalendar").text(JSON.stringify(Rho.System.hasCalendar))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>hasTouchscreen</strong>
+
+            <p class="item-value" id="hasTouchscreen">
+                <script>$("#hasTouchscreen").text(JSON.stringify(Rho.System.hasTouchscreen))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>httpProxyURI</strong>
+
+            <p class="item-value" id="httpProxyURI">
+                <script>$("#httpProxyURI").text(JSON.stringify(Rho.System.httpProxyURI))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>isEmulator</strong>
+
+            <p class="item-value" id="isEmulator">
+                <script>$("#isEmulator").text(JSON.stringify(Rho.System.isEmulator))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>isRhoSimulator</strong>
+
+            <p class="item-value" id="isRhoSimulator">
+                <script>$("#isRhoSimulator").text(JSON.stringify(Rho.System.isRhoSimulator))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>isSymbolDevice</strong>
+
+            <p class="item-value" id="isSymbolDevice">
+                <script>$("#isSymbolDevice").text(JSON.stringify(Rho.System.isSymbolDevice))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>keyboardState</strong>
+
+            <p class="item-value" id="keyboardState">
+                <script>$("#keyboardState").text(JSON.stringify(Rho.System.keyboardState))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>localServerPort</strong>
+
+            <p class="item-value" id="localServerPort">
+                <script>$("#localServerPort").text(JSON.stringify(Rho.System.localServerPort))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>locale</strong>
+
+            <p class="item-value" id="locale">
+                <script>$("#locale").text(JSON.stringify(Rho.System.locale))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>lockWindowSize</strong>
+
+            <p class="item-value" id="lockWindowSize">
+                <script>$("#lockWindowSize").text(JSON.stringify(Rho.System.lockWindowSize))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>oemInfo</strong>
+
+            <p class="item-value" id="oemInfo">
+                <script>$("#oemInfo").text(JSON.stringify(Rho.System.oemInfo))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>osVersion</strong>
+
+            <p class="item-value" id="osVersion">
+                <script>$("#osVersion").text(JSON.stringify(Rho.System.osVersion))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>phoneId</strong>
+
+            <p class="item-value" id="phoneId">
+                <script>$("#phoneId").text(JSON.stringify(Rho.System.phoneId))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>platform</strong>
+
+            <p class="item-value" id="platform">
+                <script>$("#platform").text(JSON.stringify(Rho.System.platform))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>ppiX</strong>
+
+            <p class="item-value" id="ppiX">
+                <script>$("#ppiX").text(JSON.stringify(Rho.System.ppiX))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>ppiY</strong>
+
+            <p class="item-value" id="ppiY">
+                <script>$("#ppiY").text(JSON.stringify(Rho.System.ppiY))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>realScreenHeight</strong>
+
+            <p class="item-value" id="realScreenHeight">
+                <script>$("#realScreenHeight").text(JSON.stringify(Rho.System.realScreenHeight))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>realScreenWidth</strong>
+
+            <p class="item-value" id="realScreenWidth">
+                <script>$("#realScreenWidth").text(JSON.stringify(Rho.System.realScreenWidth))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>screenAutoRotate</strong>
+
+            <p class="item-value" id="screenAutoRotate">
+                <script>$("#screenAutoRotate").text(JSON.stringify(Rho.System.screenAutoRotate))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>screenHeight</strong>
+
+            <p class="item-value" id="screenHeight">
+                <script>$("#screenHeight").text(JSON.stringify(Rho.System.screenHeight))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>screenWidth</strong>
+
+            <p class="item-value" id="screenWidth">
+                <script>$("#screenWidth").text(JSON.stringify(Rho.System.screenWidth))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>screenOrientation</strong>
+
+            <p class="item-value" id="screenOrientation">
+                <script>$("#screenOrientation").text(JSON.stringify(Rho.System.screenOrientation))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>screenSleeping</strong>
+
+            <p class="item-value" id="screenSleeping">
+                <script>$("#screenSleeping").text(JSON.stringify(Rho.System.screenSleeping))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>uuid</strong>
+
+            <p class="item-value" id="uuid">
+                <script>$("#uuid").text(JSON.stringify(Rho.System.uuid))</script>
+            </p>
+        </div>
+
+        <div class="list-group-item">
+            <strong>webviewFramework</strong>
+
+            <p class="item-value" id="webviewFramework">
+                <script>$("#webviewFramework").text(JSON.stringify(Rho.System.webviewFramework))</script>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+</script>
+
+</body>
+
+</html>
