@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
     <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+    <script type="text/javascript" src="/app/kitchensink-helpers.js"></script>
 
 </head>
 
@@ -46,9 +47,11 @@
 
 <script>
     $("#doAction").on("click", function () {
-        Rho.Application.setApplicationNotify(function (params) {
-            $("#result").removeClass("hidden");
-            $("#result").append(JSON.stringify(params) + "<br />");
+        Rho.Kitchensink.doWithCaution(function () {
+            Rho.Application.setApplicationNotify(function (value) {
+                Rho.Kitchensink.appendSuccessOutputAsJson(value);
+            });
+
         });
     });
 </script>

@@ -13,7 +13,7 @@
 
     <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
     <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
-
+    <script type="text/javascript" src="/app/kitchensink-helpers.js"></script>
 </head>
 
 <body>
@@ -32,7 +32,9 @@
             <strong>appBundleFolder</strong>
 
             <p class="item-value" id="appBundleFolder">
-                <script>$("#appBundleFolder").text(JSON.stringify(Rho.Application.appBundleFolder))</script>
+                <script>$("#appBundleFolder").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                    return Rho.Application.appBundleFolder;
+                }))</script>
             </p>
         </div>
 
@@ -40,7 +42,10 @@
             <strong>appName</strong>
 
             <p class="item-value" id="appName">
-                <script>$("#appName").text(JSON.stringify(Rho.Application.appName))</script>
+                <script>$("#appName").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.appName;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -48,7 +53,10 @@
             <strong>appsBundleFolder</strong>
 
             <p class="item-value" id="appsBundleFolder">
-                <script>$("#appsBundleFolder").text(JSON.stringify(Rho.Application.appsBundleFolder))</script>
+                <script>$("#appsBundleFolder").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.appsBundleFolder;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -56,7 +64,10 @@
             <strong>badLinkURI</strong>
 
             <p class="item-value" id="badLinkURI">
-                <script>$("#badLinkURI").text(JSON.stringify(Rho.Application.badLinkURI))</script>
+                <script>$("#badLinkURI").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.badLinkURI;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -64,7 +75,10 @@
             <strong>bundleFolder</strong>
 
             <p class="item-value" id="bundleFolder">
-                <script>$("#bundleFolder").text(JSON.stringify(Rho.Application.bundleFolder))</script>
+                <script>$("#bundleFolder").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.bundleFolder;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -72,7 +86,10 @@
             <strong>configPath</strong>
 
             <p class="item-value" id="configPath">
-                <script>$("#configPath").text(JSON.stringify(Rho.Application.configPath))</script>
+                <script>$("#configPath").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.configPath;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -80,7 +97,10 @@
             <strong>databaseBlobFolder</strong>
 
             <p class="item-value" id="databaseBlobFolder">
-                <script>$("#databaseBlobFolder").text(JSON.stringify(Rho.Application.databaseBlobFolder))</script>
+                <script>$("#databaseBlobFolder").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.databaseBlobFolder;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -88,7 +108,10 @@
             <strong>defaultNativeMenu</strong>
 
             <p class="item-value" id="defaultNativeMenu">
-                <script>$("#defaultNativeMenu").text(JSON.stringify(Rho.Application.defaultNativeMenu))</script>
+                <script>$("#defaultNativeMenu").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.defaultNativeMenu;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -96,7 +119,10 @@
             <strong>locale</strong>
 
             <p class="item-value" id="locale">
-                <script>$("#locale").text(JSON.stringify(Rho.Application.locale))</script>
+                <script>$("#locale").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.locale;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -104,7 +130,10 @@
             <strong>modelsManifestPath</strong>
 
             <p class="item-value" id="modelsManifestPath">
-                <script>$("#modelsManifestPath").text(JSON.stringify(Rho.Application.modelsManifestPath))</script>
+                <script>$("#modelsManifestPath").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.modelsManifestPath;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -112,7 +141,10 @@
             <strong>nativeMenu</strong>
 
             <p class="item-value" id="nativeMenu">
-                <script>$("#nativeMenu").text(JSON.stringify(Rho.Application.nativeMenu))</script>
+                <script>$("#nativeMenu").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.nativeMenu;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -120,7 +152,10 @@
             <strong>publicFolder</strong>
 
             <p class="item-value" id="publicFolder">
-                <script>$("#publicFolder").text(JSON.stringify(Rho.Application.publicFolder))</script>
+                <script>$("#publicFolder").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.publicFolder;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -128,7 +163,10 @@
             <strong>settingsPageURI</strong>
 
             <p class="item-value" id="settingsPageURI">
-                <script>$("#settingsPageURI").text(JSON.stringify(Rho.Application.settingsPageURI))</script>
+                <script>$("#settingsPageURI").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.settingsPageURI;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -136,7 +174,10 @@
             <strong>splash</strong>
 
             <p class="item-value" id="splash">
-                <script>$("#splash").text(JSON.stringify(Rho.Application.splash))</script>
+                <script>$("#splash").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.splash;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -144,7 +185,10 @@
             <strong>startURI</strong>
 
             <p class="item-value" id="startURI">
-                <script>$("#startURI").text(JSON.stringify(Rho.Application.startURI))</script>
+                <script>$("#startURI").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.startURI;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -152,7 +196,10 @@
             <strong>title</strong>
 
             <p class="item-value" id="title">
-                <script>$("#title").text(JSON.stringify(Rho.Application.title))</script>
+                <script>$("#title").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.title;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -160,7 +207,10 @@
             <strong>userFolder</strong>
 
             <p class="item-value" id="userFolder">
-                <script>$("#userFolder").text(JSON.stringify(Rho.Application.userFolder))</script>
+                <script>$("#userFolder").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.userFolder;
+                        })
+                )</script>
             </p>
         </div>
 
@@ -168,17 +218,16 @@
             <strong>version</strong>
 
             <p class="item-value" id="version">
-                <script>$("#version").text(JSON.stringify(Rho.Application.version))</script>
+                <script>$("#version").text(Rho.Kitchensink.inlineDoWithCaution(function () {
+                            return Rho.Application.version;
+                        })
+                )</script>
             </p>
         </div>
 
     </div>
 
 </div>
-
-<script>
-
-</script>
 
 </body>
 
