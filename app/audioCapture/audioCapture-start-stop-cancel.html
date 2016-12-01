@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
     <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+    <script type="text/javascript" src="/app/kitchensink-helpers.js"></script>
 
 </head>
 
@@ -41,53 +42,30 @@
 </div>
 
 <script>
-    //TODO: use doWithCaution here
-    var resultOutput = function (anObject) {
-        var element = $("#result");
-        element.removeClass("hidden")
-                .append("<br/>")
-                .append(anObject)
-                .append("<br/>");
-    };
-
-    var errorOutput = function (anObject) {
-        var element = $("#error");
-        element.removeClass("hidden")
-                .text(JSON.stringify(anObject));
-    };
-
     $("#start").on("click", function () {
-        $("hidden").addClass("hidden");
-        $("#result").empty();
-        try {
+        Rho.Kitchensink.doWithCaution(function () {
             var filename = Rho.RhoFile.join(Rho.Application.userFolder, "sample");
             Rho.AudioCapture.start(
                     {"fileName": filename},
-                    function (anObject) {
-                        resultOutput(JSON.stringify(anObject));
+                    function (value) {
+                        Rho.Kitchensink.appendSuccessOutputAsJson(value);
                     });
-            resultOutput("Audio capturing is started");
-        } catch (e) {
-            errorOutput(JSON.stringify(e));
-        }
+            Rho.Kitchensink.appendSuccessOutputAsJson("Audio capturing is started");
+        });
     });
 
     $("#stop").on("click", function () {
-        try {
+        Rho.Kitchensink.doWithCaution(function () {
             Rho.AudioCapture.stop();
-            resultOutput("Audio capturing is stopped");
-        } catch (e) {
-            errorOutput(JSON.stringify(e));
-        }
+            Rho.Kitchensink.appendSuccessOutputAsJson("Audio capturing is stopped");
+        });
     });
 
     $("#cancel").on("click", function () {
-        try {
+        Rho.Kitchensink.doWithCaution(function () {
             Rho.AudioCapture.cancel();
-            resultOutput("Audio capturing is cancelled");
-        } catch (e) {
-            errorOutput(JSON.stringify(e));
-        }
+            Rho.Kitchensink.appendSuccessOutputAsJson("Audio capturing is cancelled");
+        });
     });
 
 </script>
