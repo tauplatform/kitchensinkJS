@@ -37,17 +37,23 @@
         <div id="error" class="alert alert-danger hidden" role="alert"></div>
     </div>
 
-</div>
+    <img id="image" src="" class="img-responsive">
 
-<script>
-    $("#doAction").on("click", function () {
-        Rho.Kitchensink.doWithCaution(function () {
-            Rho.Camera.choosePicture({}, function (value) {
-                Rho.Kitchensink.appendSuccessOutputAsJson(value);
+    <script>
+        $("#doAction").on("click", function () {
+            Rho.Kitchensink.doWithCaution(function () {
+                $("image").empty();
+                Rho.Camera.choosePicture({}, function (value) {
+                    Rho.Kitchensink.appendSuccessOutputAsJson(value);
+                    if (value.status === "ok") {
+                        //var imgPath = Rho.Application.relativeDatabaseBlobFilePath(value.imageUri);
+                        var imgPath = value.imageUri;
+                        $("#image").attr("src", value.imageUri);
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 
 </body>
 
