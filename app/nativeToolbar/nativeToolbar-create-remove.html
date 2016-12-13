@@ -47,6 +47,14 @@
     $("#create").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.NativeToolbar.create([
+
+// Uncomment the code below for view the issue with non-existent image for icon
+//  if image is not found that Toolbar cannot be removed, all buttons that follow after incorrect button are not visible
+//                {
+//                    label: "TAU 1",
+//                    action: "http://www.tau-technologies.com",
+//                    icon: "public/images/absent_icon.png"
+//                },
                 {
                     label: "Home",
                     action: Rho.Application.startURI,
@@ -64,15 +72,17 @@
                     action: "separator"
                 },
                 {
-                    label: "google",
-                    action: "https://www.google.com",
-                    icon: "public/images/google.jpeg"
-                }], {backgroundColor: 11674146})
+                    label: "TAU 2",
+                    action: "http://www.tau-technologies.com",
+                    icon: "public/images/rho_32.png"
+                }], {backgroundColor: 0xB22222})
+
         });
     });
 
     $("#remove").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
+            console.log("Rho.NativeToolbar.remove()");
             Rho.NativeToolbar.remove();
         });
     });
