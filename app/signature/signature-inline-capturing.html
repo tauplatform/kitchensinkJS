@@ -42,6 +42,8 @@
         <div id="error" class="alert alert-danger hidden" role="alert"></div>
     </div>
 
+    <img id="image" src="" class="img-responsive">
+
 </div>
 
 <script>
@@ -53,8 +55,19 @@
 
     $("#capture").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
-            Rho.Signature.capture(function (value) {
-                Rho.Kitchensink.successOutputAsJson(value)
+            Rho.Signature.fileName = Rho.RhoFile.join(Rho.Application.databaseBlobFolder, new Date().getTime().toString());
+            Rho.Signature.capture(function (data) {
+                Rho.Kitchensink.successOutputAsJson(data);
+                if (data.status === "ok") {
+                    var imagePath;
+                    if (Rho.System.platform === Rho.System.PLATFORM_IOS) {
+                        imagePath = data.imageUri;
+                    }
+                    else {
+                        imagePath = data.imageUri.slice(7);
+                    }
+                    $("#image").attr("src", imagePath);
+                }
             });
         });
     });

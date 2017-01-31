@@ -48,9 +48,7 @@
             Rho.Camera.takePicture({}, function (value) {
                 Rho.Kitchensink.appendSuccessOutputAsJson(value);
                 if (value.status === "ok") {
-                    var path = Rho.Application.relativeDatabaseBlobFilePath(value.imageUri);
-                    path = Rho.Application.expandDatabaseBlobFilePath(path);
-                    $("#image").attr("src", path);
+                    $("#image").attr("src", value.imageUri);
                 }
             });
         });
