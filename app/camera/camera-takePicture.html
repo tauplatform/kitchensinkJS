@@ -38,13 +38,20 @@
         <div id="error" class="alert alert-danger hidden" role="alert"></div>
     </div>
 
+    <img id="image" src="" class="img-responsive">
+
 </div>
 
 <script>
     $("#doAction").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
-            Rho.Camera.takePicture({}, function(value){
+            Rho.Camera.takePicture({}, function (value) {
                 Rho.Kitchensink.appendSuccessOutputAsJson(value);
+                if (value.status === "ok") {
+                    var path = Rho.Application.relativeDatabaseBlobFilePath(value.imageUri);
+                    path = Rho.Application.expandDatabaseBlobFilePath(path);
+                    $("#image").attr("src", path);
+                }
             });
         });
     });
