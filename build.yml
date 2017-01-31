@@ -1,5 +1,5 @@
 #sdk: "<path to your sdk here>"
-#sdk: "../../rhomobile/rhodes"
+sdk: "../../rhomobile/rhodes"
 sdkversion: 5.5.0
 name: kitchensinkJS
 version: 1.0
@@ -10,7 +10,7 @@ javascript_application: true
 #ajax_api_bridge: true
 iphone:
   configuration: Release
-  sdk: iphonesimulator10.1
+  sdk: iphonesimulator10.2
   BundleIdentifier: com.rhomobile.kitchensinkjs
   BundleURLScheme: kitchensinkjs
   production:
