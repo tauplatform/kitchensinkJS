@@ -46,11 +46,7 @@
 
     $("#doAction").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
-            $("#startStatusNotify").on("click", function () {
-                Rho.Kitchensink.doWithCaution(function () {
-                    Rho.Notification.showStatus("Status text", "Status text", "Hide button label");
-                });
-            });
+            Rho.Notification.showStatus("Status text", "Status text", "Hide button label");
         });
     });
 
