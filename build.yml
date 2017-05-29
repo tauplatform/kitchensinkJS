@@ -1,6 +1,6 @@
 #sdk: "<path to your sdk here>"
 sdk: "../../rhomobile/rhodes"
-sdkversion: 5.5.0
+sdkversion: 5.8.0
 name: kitchensinkJS
 version: 1.0
 vendor: rhomobile
@@ -19,6 +19,8 @@ iphone:
   #ApplicationQueriesSchemes: ["scheme1", "scheme2"]
 wp8:
   productid: '98cef7b0-88bb-0134-7b78-60f81db5e3c0'
+uwp:
+  productid: 'caa0300f-1021-40aa-bb98-27c5547616fa'
 android:
   #manifest_template: 'AndroidManifest.erb'
   version: 7.1.1
@@ -32,6 +34,7 @@ wm:
     - webkit
 
 win32:
+  msvc: 2015
   deployqt: 1
   deploymsvc: 1
 
