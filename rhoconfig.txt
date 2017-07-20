@@ -125,3 +125,6 @@ use_bb_full_browser=6
 #default value is FALSE
 # If TRUE WKWebView new iOS high performance(Javascript performance up to 10 times faster than default UIWebView) WebView used instead of default UIWebView.
 # WkWebView can not be used with ios_direct_local_requests !
+
+# finger scroll activation on windows XP/7/8/8.1/10
+use_kinetic_scroll_on_windows = 1
