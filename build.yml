@@ -17,6 +17,7 @@ iphone:
     ipa_itunesartwork_image: "./production/iTunesArtwork.png"
   # Note: Specifies the URL schemes the app is able to call using Rho.System.runApplication
   #ApplicationQueriesSchemes: ["scheme1", "scheme2"]
+  extensions: ["hardwarekeys", "barcode", "screenorientation", "indicators", "sensor", "websocket", "signature", "audiocapture", "mediacapture","printing", "mediaplayer", "printing_zebra"]
 wp8:
   productid: '98cef7b0-88bb-0134-7b78-60f81db5e3c0'
 uwp:
@@ -27,12 +28,12 @@ android:
   version: 7.1.1
   # Note: in order to simplify debugging only app messages and system channels with priority informative and higher, and any errors are enabled by default
   logcatFilter: APP:I StrictMode:I DEBUG:I *:E
+  extensions: ["hardwarekeys", "barcode", "screenorientation", "indicators", "sensor", "websocket", "signature", "audiocapture", "mediacapture","printing", "mediaplayer", "printing_zebra"]
 
 wm:
   #sdk: "MC3000c50b (ARMV4I)"
   #sdk: "Windows Mobile 6.5.3 Professional DTK (ARMV4I)"
-  extensions:
-    - webkit
+  extensions: ["barcode", "screenorientation", "cardreader", "indicators", "sensor", "audiocapture", "mediacapture"]
 
 win32:
   msvc: 2015
@@ -49,7 +50,6 @@ extensions:
   #- printing
   #- printing_zebra
   #- sensor
-  #- indicators
   #- signature
 
 capabilities:
