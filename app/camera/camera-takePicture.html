@@ -46,6 +46,7 @@
     $("#doAction").on("click", function () {
         Rho.Kitchensink.doWithCaution(function () {
             Rho.Camera.takePicture({}, function (value) {
+                console.log("value", value);
                 Rho.Kitchensink.appendSuccessOutputAsJson(value);
                 if (value.status === "ok") {
                     $("#image").attr("src", value.imageUri);
