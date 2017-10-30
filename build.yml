@@ -1,5 +1,5 @@
 #sdk: "<path to your sdk here>"
-sdk: "../rhodes"
+#sdk: "../rhodes"
 sdkversion: 5.8.0
 name: kitchensinkJS
 version: 1.0
@@ -25,7 +25,7 @@ uwp:
   target: 'ARM'
 android:
   #manifest_template: 'AndroidManifest.erb'
-  version: 7.1.1
+  version: 4.4.2
   # Note: in order to simplify debugging only app messages and system channels with priority informative and higher, and any errors are enabled by default
   logcatFilter: APP:I StrictMode:I DEBUG:I *:E
   extensions: ["hardwarekeys", "barcode", "screenorientation", "indicators", "sensor", "websocket", "signature", "audiocapture", "mediacapture","printing", "mediaplayer", "printing_zebra"]
