@@ -4,7 +4,7 @@ sdkversion: 6.0.0
 name: kitchensinkJS
 version: 1.0
 vendor: rhomobile
-build: release
+build: debug
 applog: rholog.txt
 javascript_application: true
 #ajax_api_bridge: true
