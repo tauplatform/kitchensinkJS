@@ -1,6 +1,6 @@
 #sdk: "<path to your sdk here>"
 #sdk: "../rhodes"
-sdkversion: 5.8.0
+sdkversion: 6.0.0
 name: kitchensinkJS
 version: 1.0
 vendor: rhomobile
@@ -23,6 +23,7 @@ wp8:
 uwp:
   productid: 'caa0300f-1021-40aa-bb98-27c5547616fa'
   target: 'ARM'
+  extensions: ["sensor", "mediacapture"]
 android:
   #manifest_template: 'AndroidManifest.erb'
   version: 4.4.2
@@ -39,6 +40,7 @@ win32:
   msvc: 2015
   deployqt: 1
   deploymsvc: 1
+  extensions: ["barcode", "mediacapture"]
 
 extensions:
   #- audiocapture
