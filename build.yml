@@ -4,7 +4,7 @@ sdkversion: 6.0.0
 name: kitchensinkJS
 version: 1.0
 vendor: rhomobile
-build: debug
+build: release
 applog: rholog.txt
 javascript_application: true
 #ajax_api_bridge: true
@@ -40,7 +40,7 @@ win32:
   msvc: 2015
   deployqt: 1
   deploymsvc: 1
-  extensions: ["barcode", "mediacapture"]
+  #extensions: ["barcode", "mediacapture"]
 
 extensions:
   #- audiocapture
