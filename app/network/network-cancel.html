@@ -30,8 +30,8 @@
 
 
     <form>
-        <button type="button" id="start" class="btn btn-primary btn-block">Press for cancelling GET method</button>
-        <input type="checkbox" id="cancelRequest">Mark for cancelling request</button>
+        <button type="button" id="start" class="btn btn-primary btn-block">Send GET requests</button>
+        <input type="checkbox" id="cancelRequestAll">Check for cancelling all requests</button><br/>
     </form>
 
 
@@ -45,14 +45,21 @@
 <script>
 
     $("#start").on("click", function () {
-        Rho.Network.get({url: "https://www.amazon.com"}, function (value) {
-            Rho.Kitchensink.appendSuccessOutputAsJson(value);
-        });
+        var callbackA = function () {
+            Rho.Kitchensink.appendSuccessOutput("Request to amazon.com is done");
+        };
+        var callbackB = function () {
+            Rho.Kitchensink.appendSuccessOutput("Request to twitter.com is done");
+        };
 
-        var shouldBeCancelled = $('#cancelRequest:checked').val();
-        if (shouldBeCancelled) {
+        Rho.Network.get({url: "https://www.amazon.com"}, callbackA);
+        Rho.Network.get({url: "https://www.twitter.com"}, callbackB);
+
+
+        var shouldBeCancelledAll = $('#cancelRequestAll:checked').val();
+        if (shouldBeCancelledAll) {
             Rho.Network.cancel();
-            Rho.Kitchensink.appendSuccessOutput("The request is cancelled");
+            Rho.Kitchensink.appendSuccessOutput("The all requests are cancelled");
         }
 
     });
