@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>KitchensinkJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" href="/public/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <script type="text/javascript" src="/public/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/public/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/public/api/rhoapi-modules.js"></script>
+    <script type="text/javascript" src="/public/api/rhoapi-modules-Rhosim-Fix.js"></script>
+    <script type="text/javascript" src="/app/kitchensink-helpers.js"></script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row page-title">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <a href="index.html" class="btn btn-default btn-sm">Back</a>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h4 class="text-center">Network.downloadFile</h4>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    </div>
+  
+  <form>
+  	<input type="button" onclick="doDownload();" value="Download" />
+  </form>
+
+  <div class="result-area">    
+    <div id='progress'></div>
+    <div id='status'></div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+	var filesize = -1;
+	var received = 0;
+
+	var dlCallback = function( params ) {
+
+		if ( params['status'] == 'progress_headers' ) {
+			filesize = parseInt(params['headers']['content-length']);
+		} else if ( params['status'] == 'progress_data' ) {
+			received += parseInt(params['length']);
+			document.getElementById("progress").textContent = received + '/' + filesize;
+		}
+
+		document.getElementById("status").textContent = params['status'];
+
+		console.log( JSON.stringify( params ) );
+	}
+
+
+	function doDownload() {
+		size = -1;
+		received = 0;
+
+		document.getElementById("status").textContent = '';
+		document.getElementById("progress").textContent = '';
+
+		Rho.Network.downloadFile(
+			{ 
+				url: 'https://s3.amazonaws.com/files.tau-technologies.com/demo/inventory/inventoryDemo.apk',
+				filename: Rho.RhoFile.join( Rho.Application.userFolder, 'downloaded.file'),
+				overwriteFile: true,
+				createFolders: true,
+				wantReceiveProgressCallbacks: true
+			},
+			dlCallback
+		);
+	}
+
+	
+</script>
+
+</body>
+
+</html>
