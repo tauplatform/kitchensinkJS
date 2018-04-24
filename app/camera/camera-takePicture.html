@@ -28,9 +28,7 @@
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
     </div>
 
-    <form>
-        <button type="button" id="doAction" class="btn btn-primary btn-block">Call method takePicture</button>
-    </form>
+    <div id="cameras" class="list-group"></div>
 
 
     <div class="result-area">
@@ -43,17 +41,41 @@
 </div>
 
 <script>
-    $("#doAction").on("click", function () {
-        Rho.Kitchensink.doWithCaution(function () {
-            Rho.Camera.takePicture({}, function (value) {
+
+    $(document).ready(function () {
+        var cameras = Rho.Camera.enumerate();
+        $("#cameras").removeClass("hidden");
+
+        if ((cameras == null) || (cameras.length === 0)) {
+            $("#cameras").text("No cameras available");
+            return;
+        }
+
+        for (var i = 0; i < cameras.length; i++) {
+            var device = cameras[i];
+            var item = $("<li class='list-group-item'></li>");
+            item.append("<strong>" + device.cameraType + "</strong>");
+            var takePictureButton = $("<span class='pull-right'><button type='button' class='btn btn-default btn-xs' data-role='take-picture' data-camera-type='" + device.cameraType + "'>Take Picture</button></span>");
+            item.append(takePictureButton);
+            $("#cameras").append(item);
+        }
+
+        $("[data-role=take-picture]").on("click", function (e) {
+            console.log("$(this)", $(this));
+            var type = $(this).attr("data-camera-type");
+            var camera = Rho.Camera.getCameraByType(type);
+            camera.takePicture({}, function (value) {
                 console.log("value", value);
                 Rho.Kitchensink.appendSuccessOutputAsJson(value);
                 if (value.status === "ok") {
                     $("#image").attr("src", value.imageUri);
                 }
             });
+            $("#result").empty().addClass("hidden");
         });
     });
+
+
 </script>
 
 </body>
