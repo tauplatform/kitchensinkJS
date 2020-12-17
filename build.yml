@@ -35,9 +35,9 @@ android:
   extensions: ["hardwarekeys", "barcode", "screenorientation", "indicators", "sensor", "websocket", "signature", "audiocapture", "mediacapture", "printing", "mediaplayer", "printing_zebra"]
 
 wm:
-  #sdk: "MC3000c50b (ARMV4I)"
+  sdk: "MC3000c50b (ARMV4I)"
   #sdk: "Windows Mobile 6.5.3 Professional DTK (ARMV4I)"
-  sdk: "Windows Mobile 6 Professional SDK (ARMV4I)"
+  #sdk: "Windows Mobile 6 Professional SDK (ARMV4I)"
   #extensions: ["webkit", "barcode", "screenorientation", "cardreader", "indicators", "sensor", "audiocapture", "mediacapture"]
 
 win32:
